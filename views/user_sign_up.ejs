@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Font awesome library -->
+        <script src="https://kit.fontawesome.com/f589ac33f3.js" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="https://www.w3schools.com/images/lamp.jpg" />
+
+        <!-- title -->
+        <title>AUTHENTICATION SYSTEM</title>
+
+        <!-- noty lib tags -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    </head>
+    <body>
+
+        <!-- Header Container -->
+        <header>
+            <div class="bg-info collapse" id="navbarHeader" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="text-white">About</h4>
+                            <p class="text-white">
+                                THE AUTHENTICATION SYSTEM is a complete authentication system which can be used as a starter code for creating any new application.
+                                It also simulates as firewall for authentication of website. In this site we have defined minimal authentication characterstics requirements
+                                which provide necessary security for a website.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navbar -->
+            <div class="navbar navbar-info bg-info shadow-sm">
+                <div class="container">
+                    <a href="/" class="navbar-brand text-white d-flex align-items-center">
+                        <i class="fa-solid fa-shield-halved"></i>&nbsp;
+                        <strong>AUTHENTICATION SYSTEM</strong>
+                    </a> 
+                    <button class="navbar-toggler collapsed text-white" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Form container -->
+        <div id="project_form_container" class="container pt-3 mx-auto">
+            <form method="post" action="/users/create" onsubmit="return check()">
+                
+                    <div class="form-group col-sm-6">
+                        <label for="inputName" class="my-0">Name :</label>
+                        <input id="inputName" type="text" name="name" class="form-control" placeholder="Enter Name  ... " required>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="inputEmail" class="my-0">Email :</label>
+                        <input id="inputEmail" type="text" name="email" class="form-control" placeholder="Enter Email  ... " required>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="password" class="my-0">Password :</label>
+                        <input id="password" type="text" name="password" class="form-control" placeholder="Enter Password  ... " required>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="confirm_password" class="my-0">Confirm_password :</label>
+                        <input id="confirm_password" type="text" name="confirm_password" class="form-control" placeholder="Enter Password Again ... " required>
+                    </div>
+                    <div class="col-sm">
+                        <input type="submit" class="btn btn-primary btn-lg mt-4" value="Sign-Up">
+                        <!-- <button type="submit" class="btn btn-primary btn-lg mt-4">Sign-Up</button> -->
+                    </div>
+                
+            </form> 
+        </div>
+    </body>
+
+    <!-- bootstrap js files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script>
+    function check(){   
+        //noty logics  
+    if(document.getElementById('password').value != document.getElementById('confirm_password').value) {
+        new Noty({
+        layout:'topRight',
+        theme:'metroui',
+        type:'error',
+        text: "Password does not match.",  
+        timeout:1500       
+        }).show();
+        return false;
+        }
+        new Noty({
+        layout:'topRight',
+        theme:'metroui',
+        type:'success',
+        text: "Signing Up.",  
+        timeout:1500       
+        }).show();  
+    }    
+    </script>
+</html>
